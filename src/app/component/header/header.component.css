@@ -1,0 +1,65 @@
+
+.add-airline-layout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+  }
+  .example-headers-align .mat-expansion-panel-header-description {
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .example-headers-align .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  .add-airline-form{
+  
+    display: flex;
+    flex-direction:row;
+  }
+
+  .example-container .mat-form-field + .mat-form-field {
+    margin-left: 8px;
+  }
+  
+  .example-container .mat-form-field {
+    width: 220px;
+  }
+  
+  .example-container form {
+    margin-bottom: 20px;
+  }
+  
+  .example-container form > * {
+    margin: 5px 0;
+  }
+  
+  .example-container .mat-radio-button {
+    margin: 0 12px;
+  }
+  .table {
+    width: 100%;
+  }
+  .example-card {
+ 
+    max-width: 400px;
+    background-color: bisque;
+    border: 3px solid coral;
+    margin: 10px;
+  }
+  .example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  
+  .add-airline-formp{
+  
+    display: flex;
+    flex-direction:column;
+  }

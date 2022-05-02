@@ -1,0 +1,56 @@
+<div class="add-airline-layout">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Flight data
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter Flight
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <div class="add-airline-form">
+      <mat-form-field appearance="fill">
+          <mat-label>Airline name</mat-label>
+                   <mat-select [(ngModel)]="selectedObject" (change)="consoleLog(selectedObject)" >
+                   <mat-option *ngFor="let airline of airlines" [ngvalue]="airline.airlineID">{{airline.airlineName}}</mat-option>
+          
+          </mat-select>
+        </mat-form-field>
+      
+        <!-- <mat-form-field appearance="fill">
+        <mat-label>select Airline</mat-label>
+      <mat-select required  [(ngModel)]="flight.flightId">
+        
+        <mat-option  value=5>Spicejet</mat-option>
+        <mat-option value=50004>Indigp</mat-option>
+        <mat-option value=60002>Emrates</mat-option>
+        <mat-option value=70002>Air India</mat-option>
+      
+  
+      </mat-select>
+      
+    </mat-form-field> -->
+        <mat-form-field appearance="fill">
+          <mat-label>Total Seats</mat-label>
+          <input matInput type="number" [(ngModel)]="flight.noOfSeats">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Total bussiness Seats</mat-label>
+          <input matInput type="number" [(ngModel)]="flight.noOfBusinessSeats">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+            <mat-label>Total Non bussiness Seats</mat-label>
+            <input matInput type="number" [(ngModel)]="flight.noOfNonBusinessSeats">
+          </mat-form-field>
+          <mat-form-field appearance="fill">
+            <mat-label>Instruments USed</mat-label>
+            <input matInput type="text" [(ngModel)]="flight.instrumentsUsed">
+          </mat-form-field>
+        <mat-action-row>
+          <button mat-raised-button color="primary" (click)="addFlight()">Add Airline</button>
+        </mat-action-row>
+      </div>
+    </mat-expansion-panel>
+  </div>

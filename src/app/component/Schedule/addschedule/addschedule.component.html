@@ -1,0 +1,104 @@
+<div class="add-airline-layout">
+  <form [formGroup]="options" (ngSubmit)="onSubmit(options.value)">
+    <mat-expansion-panel>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          Schedule data
+        </mat-panel-title>
+        <mat-panel-description>
+          Enter Flight Schedule
+          <mat-icon>account_circle</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+  
+      <div class="add-airline-form">
+        
+        <mat-form-field appearance="fill"
+      >
+        <mat-label>Choose Airline</mat-label>
+      <mat-select formControlName="airlineid">
+       
+        <mat-option *ngFor="let airline of airlines" [value]="airline.airlineID">{{airline.airlineName}}</mat-option>
+        <!-- <mat-option value="I">Indigo</mat-option>
+        <mat-option value="E">Emirates</mat-option>
+        <mat-option value="">Air India</mat-option> -->
+        
+      </mat-select>
+      
+    </mat-form-field>
+    <mat-form-field appearance="fill"
+      >
+        <mat-label>Select  Flight</mat-label>
+      <mat-select required formControlName="flightid">
+      
+        <mat-option *ngFor="let flight of flights" [value]="flight.flightId">{{flight.flightId}}</mat-option>
+        <!-- <mat-option value=10003>FB33</mat-option> -->
+      </mat-select>
+      
+    </mat-form-field>
+    <mat-form-field appearance="fill"
+    >
+      <mat-label>From</mat-label>
+    <mat-select required formControlName="from">
+      
+      <mat-option value="DEL">DELHI</mat-option>
+      <mat-option value="CHE">CHENNAI</mat-option>
+      <mat-option value="TVM">TRIVANDRUM</mat-option>
+      <mat-option value="BGL">BENGULURU</mat-option>
+      <mat-option value="KOC">KOCHI</mat-option>
+
+    </mat-select>
+    
+  </mat-form-field>
+  <mat-form-field appearance="fill"
+  >
+    <mat-label>To</mat-label>
+  <mat-select required formControlName="to">
+    
+    <mat-option value="DEL">DELHI</mat-option>
+    <mat-option value="CHE">CHENNAI</mat-option>
+    <mat-option value="TVM">TRIVANDRUM</mat-option>
+    <mat-option value="BGL">BENGULURU</mat-option>
+    <mat-option value="KOC">KOCHI</mat-option>
+  </mat-select>
+  
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput type="datetime-local" formControlName="dateA" placeholder="Arrival date">
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput type="datetime-local" formControlName="dateD" placeholder="Depature">
+</mat-form-field>
+<!-- <mat-form-field appearance="fill" class="example-form-field">
+    <mat-label>Enter a date range</mat-label>
+    <mat-date-range-input [rangePicker]="rangePicker" formControlName="dateF">
+      <input matStartDate placeholder="Start date">
+      <input matEndDate placeholder="End date">
+    </mat-date-range-input>
+    <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint>
+    <mat-datepicker-toggle matSuffix [for]="rangePicker"></mat-datepicker-toggle>
+    <mat-date-range-picker #rangePicker>
+      <mat-date-range-picker-actions>
+        <button mat-button matDateRangePickerCancel>Cancel</button>
+        <button mat-raised-button color="primary" matDateRangePickerApply>Apply</button>
+      </mat-date-range-picker-actions>
+    </mat-date-range-picker>
+  </mat-form-field> -->
+
+        <mat-form-field appearance="fill">
+          <mat-label>Total Cost For Bussiness</mat-label>
+          <input matInput type="number" formControlName="coastB">
+        </mat-form-field>
+        <mat-form-field appearance="fill">
+          <mat-label>Total Cost For Economy</mat-label>
+          <input matInput type="number" formControlName="coastNB">
+        </mat-form-field>
+        <mat-action-row>
+           <button mat-raised-button color="primary">Add Schedule</button> 
+        </mat-action-row>
+      </div>
+    </mat-expansion-panel>
+    </form>
+  </div>
