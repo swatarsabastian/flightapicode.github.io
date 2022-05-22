@@ -15,18 +15,18 @@ export class UserService {
   LoginUser(loginInfo: UserLoginInfo):Observable<string>
    {
      console.log(`User Login Detail in service layer ${loginInfo}`);
-  return this.httpClient.post<string>('https://flightwebapi20220428214851.azurewebsites.net/api/User/login',loginInfo);
+  return this.httpClient.post<string>('http://localhost:5000/api/User/login',loginInfo);
   }
 
   registerUser(user:User):Observable<boolean> {
-    return this.httpClient.post<boolean>('https://flightwebapi20220428214851.azurewebsites.net/api/User/registerUser',user);
+    return this.httpClient.post<boolean>('http://localhost:5000/api/User/registerUser',user);
   }
 
   getUser(name: any):Observable<User> {
  
    console.log(name);
    // const opts = { params: new HttpParams({fromString: "abc"}) };
-    return this.httpClient.get<User>('https://flightwebapi20220428214851.azurewebsites.net/api/User/GetUserByName/'+name);
+    return this.httpClient.get<User>('http://localhost:5000/api/User/GetUserByName/'+name);
   }
 
 
@@ -37,8 +37,9 @@ export class UserService {
     queryParams = queryParams.append("source",fromcity);
     queryParams = queryParams.append("destination",tocity);
     queryParams = queryParams.append("RoundTrip",'true');
-    return this.httpClient.get<Schedule[]>('https://airline20220428234318.azurewebsites.net/api/Airline/searchSchedule',{params:queryParams});
+    return this.httpClient.get<Schedule[]>('http://localhost:5002/api/Airline/searchSchedule',{params:queryParams});
   }
+  //https://airline20220428234318.azurewebsites.net/api/Airline/searchSchedule
  
 }
 //${term}

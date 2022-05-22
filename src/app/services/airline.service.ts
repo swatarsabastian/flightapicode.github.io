@@ -14,16 +14,16 @@ export class AirlineService {
   addAirline(airline:Airline):Observable<boolean>
    {
      console.log(airline);
-      return this.httpClient.post<boolean>('https://airline20220428234318.azurewebsites.net/api/Airline/addAirline',airline);
+      return this.httpClient.post<boolean>('http://localhost:5002/api/Airline/addAirline',airline);
      
    }
   getAllAirlines():Observable<Airline[]>
    {
-    return this.httpClient.get<Airline[]>('https://airline20220428234318.azurewebsites.net/api/Airline/getallAirlines');
+    return this.httpClient.get<Airline[]>('http://localhost:5002/api/Airline/getallAirlines');
    }
 
    getAllAirlinesAll():Observable<Airline[]>
    {
-    return this.httpClient.get<Airline[]>('https://airline20220428234318.azurewebsites.net/api/Airline/getallAirlinesAll');
+    return this.httpClient.get<Airline[]>('http://localhost:5002/api/Airline/getallAirlinesAll');
    }
 }
