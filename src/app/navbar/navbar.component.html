@@ -1,0 +1,47 @@
+<!-- <span>
+  <img src="assets/images/back2.jpg" class="angular-logo">
+ 
+</span> -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <mat-toolbar>Menu</mat-toolbar>
+    <mat-nav-list>
+     
+        <!-- <a mat-list-item *ngIf="showAdminBoard" routerLink="home" >Home</a>  -->
+      <!-- <a mat-list-item routerLink="register">Register</a> -->
+      <!-- <a mat-list-item routerLink="login">Login</a> -->
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="displayairlines">Display Airlines</a>
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="add-schedule" >Add schedules</a> 
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="airlines">Airline</a>
+      <a mat-list-item *ngIf="showUserrBoard" routerLink="header">Search Flights</a> 
+      <a mat-list-item *ngIf="showUserrBoard" routerLink="booking">Book Flights</a>
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="displayflight">Display Flights</a>
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="addflight">Add Flights</a>
+      <a mat-list-item *ngIf="showAdminBoard" routerLink="adddiscount">Add Discount</a>
+      <!-- <a mat-list-item *ngIf="showAdminBoard" routerLink="display-schedule">Display Schedule</a> -->
+      <a mat-list-item routerLink="logout">Logout</a>
+         </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+
+     <!-- <mat-toolbar class="fixed-header"  color="">
+       <img src="assets/images/back2.jpg" >
+ 
+     
+    </mat-toolbar> -->
+  <!--
+   <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span> </span>-->
+    <!-- Add Content Here -->
+  </mat-sidenav-content>
+</mat-sidenav-container>

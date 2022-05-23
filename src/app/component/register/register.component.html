@@ -1,0 +1,32 @@
+<div class="submit-custom-button" >
+    <form #registerForm="ngForm" (ngSubmit)="registerUser(registerForm)">
+<p>Register User!</p>
+<div class="mb-3 row">
+    <label for="inputUser" class="col-sm-2 col-form-label">Enter your Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="name" name ="name" [(ngModel)]="user.name" value="abc">
+    </div>
+  </div>
+<div class="mb-3 row">
+    <label for="inputPassword" class="col-sm-2 col-form-label">Enter your Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword" name ="password" [(ngModel)]="user.password" value="abc123">
+    </div>
+  </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="emailid" name ="emailid" value=abc [(ngModel)]="user.emailId">
+    </div>
+    
+  </div>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">Phone Number</label>
+    <div class="col-sm-10">
+      <input type="text"  id="phonenumber" class="form-control" name ="phonenumber" value="abc" [(ngModel)]="user.phoneNumber">
+    </div>
+  </div>
+<button type="submit" class="btn btn-primary">Register</button>
+<a routerLink="/login" routerLinkActive="active">Login</a>
+</form>
+</div>

@@ -1,0 +1,31 @@
+<div class="add-airline-layout">
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Airline data
+      </mat-panel-title>
+      <mat-panel-description>
+        Enter Airline
+        <mat-icon>account_circle</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <div class="add-airline-form">
+      <mat-form-field appearance="fill">
+        <mat-label>Airline name</mat-label>
+        <input matInput [(ngModel)]="airline.airlineName">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <input matInput [(ngModel)]="airline.address">
+      </mat-form-field>
+      <mat-form-field appearance="fill">
+        <mat-label>Contact No</mat-label>
+        <input matInput [(ngModel)]="airline.contactNumber">
+      </mat-form-field>
+      <mat-action-row>
+        <button mat-raised-button color="primary" (click)="addAirline()">Add Airline</button>
+      </mat-action-row>
+    </div>
+  </mat-expansion-panel>
+</div>
